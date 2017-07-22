@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- navbar -->
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- end navbar -->
+  <!-- font awesome -->
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="css/animate.css" rel="stylesheet" />
+  <!-- end font awesome -->
+  <style type="text/css">
+  	.prof{
+  		background-color: #2d555d;
+  	}
+
+  </style>
+</head>
+<body class="prof">
+        <!-- top navigation -->
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="/aboutus/">About</a></li>
+      <li><a href="/registerShow/">Register</a></li>
+      <li><a href="/home/">Login</a></li>
+      <li><a href="/contact/">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+  <!-- Section: contact -->
+    <section id="contact" class="home-section text-center">
+    <div class="heading-contact">
+      <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="wow bounceInDown" data-wow-delay="0.4s">
+          <div class="section-heading">
+          <h2>Get in touch</h2>
+          <i class="fa fa-2x fa-angle-down"></i>
+
+          </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="container">
+
+    <div class="row">
+      <div class="col-lg-2 col-lg-offset-5">
+        <hr class="marginbot-50">
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="boxed-grey">
+                
+                <!-- <div id="sendmessage">Your message has been sent. Thank you!</div> -->
+                <div id="errormessage"></div>
+                <form id="contact-form" action="/sendmessage/" method="post" role="form" class="contactForm">{% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Name</label>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address</label>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                <div class="validation"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Subject</label>
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Message</label>
+                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-skin pull-right" id="btnContactUs">
+                            Send Message</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    
+    <div class="col-lg-4">
+      <div class="widget-contact">
+        <h5>Main Office</h5>
+        
+        <address>
+          <strong>MCIIE, IIT BHU</strong>
+          <br>
+          Brocha Hostel<br>
+          Banaras Hindu University<br>
+          <abbr title="Phone">Mob:</abbr> 7376027225
+        </address>
+
+        <address>
+       
+          <strong>Email</strong><br>
+          <a href="mailto:#">samit5178@gmail.com</a>
+        </address>  
+        <address>
+          <strong>We're on social networks</strong><br>
+                        <ul class="company-social">
+                            <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                            <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                        </ul> 
+        </address>          
+      
+      </div>  
+    </div>
+    </div>  
+
+    </div>
+  </section>
+  <!-- /Section: contact -->
+<!-- <div class="container">
+  <div class="well well-lg">
+    <div class="jumbotron">
+      <h1>{{first_name}}</h1>
+        <div class="jumbotron">
+          <img src="" style="width: 250px; height: 300px; float: right;">
+        </div> -->
+        
+    <!-- <h3>Name:Satlaj Thakur</h3>
+    <h3>Mobile Number: 7376027225</h3>
+     <h3>Email: samit5178@gmail.com</h3>
+      <h3>Mobile Number: 7376027225</h3>
+    <br> -->
+    <!-- <a href="/edit/profile/"><button class="btn btn-danger btn-lg">Edit Profile</button></a> -->
+
+   <!--  </div>
+
+  </div>
+
+
+
+</div> -->
+<script type="text/javascript" src="/static/validation/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/static/validation/sendmessage_val.js"></script>
+<!-- <script type="text/javascript" language="javascript">
+// <![CDATA[
+$(document).ready(function() {
+$("#errormessage").click(function() {
+alert("Your message has been sent!!");
+});
+});
+// ]]>
+</script> -->
+</body>
+</html>

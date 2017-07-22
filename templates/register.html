@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vyala Tech! | </title>
+
+    <!-- Bootstrap -->
+    <link href="/static/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/static/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/static/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="/static/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Custom Theme Style -->
+    <link href="/static/build/css/custom.min.css" rel="stylesheet">
+    <style type="text/css">
+     .register{
+      background-color: #2d555d;
+     } 
+    </style>
+</head>
+<body class="register">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="/registerShow/">Register</a></li>
+      <li><a href="/home/">Login</a></li>
+      <li><a href="/contact/">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- end top navigation -->
+        <!-- page content -->
+
+  <div class="container" >
+                
+             <center><h1 style="font-family: cursive;"><strong> Create Your Account</strong></h1></center> 
+             <!-- <div class="  col-md-8 col-sm-12 col-xs-12 col-md-offset-2">      
+             <div class="ln_solid"></div> 
+             </div>  -->     
+            
+          
+            <form id="registration" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="/register/">{%csrf_token%}
+              
+                <div class="  col-md-8 col-sm-8 col-xs-12 col-md-offset-2">
+                  <div class="x_panel">
+                    <div class="x_title">
+                   <h3 style="font-family: cursive;">Personal Details</h3>
+
+                    <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content"><br>
+                    </div>
+                    </div>
+                    </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">First Name</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                          <input type="text" name="first_name" class="form-control" placeholder="First Name">
+                        </div>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Last Name</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                          <input type="text" name="last_name" class="form-control" placeholder="Last Name">
+                        </div>
+                      </div>
+                    
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Middle Name</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                          <input type="text" name="middle_name" class="form-control" placeholder="Middle Name">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                        <select class="form-control" name="gender">
+                          <option>Select Gender</option>
+                          {% for gender in genderObjects %}
+                          <option value="{{gender.name}}">{{ gender.name }}</option>
+                          {% endfor %}
+                        </select>
+                          
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Blood Group</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                        <select class="form-control" name="blood_group">
+                          <option>Select Blood Group</option>
+                          {% for bloodGroup in blood_groupObjects %}
+                          <option value="{{ bloodGroup.name }}">{{ bloodGroup.name }}</option>
+                          {% endfor %}
+                        </select>
+                          <!-- <input type="text" name="blood_group" class="form-control" placeholder="Blood Group"> -->
+                        </div>
+                      </div>
+
+                      <div class="x_content"><br>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Mobile Number</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                          <input type="integer" name="mobile_number" class="form-control" placeholder="Mobile Number">
+                        </div>
+                      </div>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">E-Mail</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                          <input type="text" name="email" class="form-control" placeholder="E-Mail">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Country</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                        <select class="form-control" name="country">
+                          <option>Select Country</option>
+                          {% for country in countryObjects %}
+                          <option value="{{ country.name }}">{{ country.name }}</option>
+                          {% endfor %}
+                        </select>
+                          
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">State</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                        <select class="form-control" name="state">
+                          <option>Select State</option>
+                          {% for states in stateObjects %}
+                          <option value="{{ states.name }}">{{ states.name }}</option>
+                          {% endfor %}
+                        </select>
+                          
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">City</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                          <select class="form-control" name="city">
+                            <option>Select City</option>
+                            {% for citi in cityObects %}
+                            <option value="{{ citi.name }}">{{ citi.name }}</option>
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                      
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                          <input type="Date" name="dob" class="form-control" placeholder="">
+                        </div>
+                      </div>
+
+                     
+
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Adhar Number</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                          <input type="text" name="adhar_number" class="form-control" placeholder="Adhar Number">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Password</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                          <input type="Password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Confirm Password</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                          <input type="Password" name="confirm_password" class="form-control" placeholder="Confirm Password" id="password">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Address</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                          <input type="text" name="address" class="form-control" placeholder="Address">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pincode</label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                          <input type="text" name="pincode" class="form-control" placeholder="Pincode">
+                        </div>
+                      </div>
+              <div class="row">
+                <div class="form-group">
+                  <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-8">
+                    <button type="button" class="btn btn-primary">Cancel</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                  </div>
+                </div>
+              </div>
+              
+            </form>
+            </div>
+ 
+
+
+<script type="text/javascript" src="/static/validation/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/static/validation/register_val.js"></script>
+</body>
+</html>
